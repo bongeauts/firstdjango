@@ -1,8 +1,9 @@
-FREECADPATH = '/usr/lib/freecad/lib/'
+FREECADPATH = '/usr/lib/freecad-daily/lib/'
 
 import sys
 sys.path.insert(0, FREECADPATH)
 import FreeCAD
+import Part
 
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
@@ -25,3 +26,13 @@ class BoxList(APIView):
 
     def post(self):
         pass
+
+class CreatePart(APIView):
+
+    def get(self, request, pk):
+        box_pk = Box.objects.get(pk=pk)
+        doc = FreeCAD.newDocument()
+        box_fc = doc.addObject("Part::Box","mybox")
+        box_fc.Height = box_pk.boxHeight
+        box_fc.Width = box_pk.boxWidth
+        box_fc.Length = box_pk.boxLength

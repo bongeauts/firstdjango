@@ -1,5 +1,7 @@
 {
     "python.pythonPath": "/home/luca/djangovenv/bin/python",
     "python.linting.enabled": true,
-    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"]
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_django", "--init-hook",
+        "import sys; sys.path.insert(0, '/usr/lib/freecad-daily/lib/')"
+    ]
 }
