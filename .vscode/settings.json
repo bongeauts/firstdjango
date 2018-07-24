@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "/home/luca/djangovenv/bin/python"
+    "python.pythonPath": "/home/luca/djangovenv/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"]
 }
