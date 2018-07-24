@@ -1,9 +1,6 @@
-FREECADPATH = '/usr/lib/freecad-daily/lib/'
-
 import sys
-sys.path.insert(0, FREECADPATH)
+sys.path.append(0,'/user(lib/freecad/lib/')
 import FreeCAD
-import Part
 
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
