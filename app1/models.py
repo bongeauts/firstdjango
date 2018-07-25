@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 
 class Box(models.Model):
-    id = pk
     boxLength = models.FloatField()
     boxHeight = models.FloatField()
     boxWidth = models.FloatField()
