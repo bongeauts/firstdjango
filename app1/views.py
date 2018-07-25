@@ -1,3 +1,4 @@
+# Freecad lib imported writing __init__.py file in each folder you want to import
 
 import FreeCAD
 import Part
@@ -16,7 +17,7 @@ from django.template import loader
 def index(request):
     return HttpResponse("<h1>this is app1 homepage")
 
-# Create your views here.
+
 class BoxList(APIView):
 
     def get(self, request):
@@ -48,15 +49,3 @@ def createCube(request, pk):
     template = loader.get_template('cube1.html')
     context = {}
     return HttpResponse(template.render(context, request))
-
-# class CreatePart(APIView):
-#
-#     def get(self, request, pk):
-#         box_pk = Box.objects.get(pk=pk)
-#         doc = FreeCAD.newDocument()
-#         box_fc = doc.addObject("Part::Box","mybox")
-#         box_fc.Height = box_pk.boxHeight
-#         box_fc.Width = box_pk.boxWidth
-#         box_fc.Length = box_pk.boxLength
-#         doc.recompute()
-#         FreeCAD.
